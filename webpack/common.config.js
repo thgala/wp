@@ -3,7 +3,6 @@ const merge = require('webpack-merge');
 const webpack = require('webpack');
 
 const development = require('./dev.config.js');
-const staging = require('./staging.config.js');
 const production = require('./prod.config.js');
 
 require('babel-polyfill').default;
@@ -56,8 +55,4 @@ if (TARGET === 'start' || !TARGET) {
 
 if (TARGET === 'build' || !TARGET) {
   module.exports = merge(production, common);
-}
-
-if (TARGET === 'staging' || !TARGET) {
-  module.exports = merge(staging, common);
 }

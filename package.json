@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Grover based on react / redux",
   "scripts": {
-    "clean": "rimraf dist",
+    "clean": "rimraf docs",
     "build": "webpack --progress --colors --display-error-details --config webpack/common.config.js",
     "production": "yarn run clean && yarn run build",
     "staging": "yarn run clean && webpack --progress --verbose --colors --display-error-details --config webpack/common.config.js",
@@ -73,6 +73,7 @@
     "redux-watch": "^1.1.1",
     "reselect": "^2.5.4",
     "reset-css": "^2.2.0",
+    "rimraf": "^2.6.1",
     "yamljs": "^0.2.8"
   },
   "main": "index.ejs",
