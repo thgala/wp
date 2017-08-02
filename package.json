@@ -3,7 +3,7 @@
   "version": "2.0.0",
   "description": "Grover based on react / redux",
   "scripts": {
-    "clean": "rimraf docs",
+    "clean": "rimraf docs/**/*; rimraf docs/*.*",
     "build": "webpack --progress --colors --display-error-details --config webpack/common.config.js",
     "production": "yarn run clean && yarn run build",
     "staging": "yarn run clean && webpack --progress --verbose --colors --display-error-details --config webpack/common.config.js",
