@@ -52,9 +52,9 @@ module.exports = {
         warnings: false,
       },
     }),
-    new CopyWebpackPlugin([
-      { from: 'CNAME', to: 'CNAME', toType: 'file' },
-      { from: 'docs/index.html', to: '404.html' },
-    ])
+    // new CopyWebpackPlugin([
+    //   { from: 'CNAME', to: 'CNAME', toType: 'file' },
+    //   { from: 'docs/index.html', to: '404.html' },
+    // ])
   ],
 };
