@@ -6,6 +6,11 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const YAML = require('yamljs');
 const APP_CONFIG = YAML.load(__dirname + '/../config.yml').production;
+const HTML_CONFIG = {
+  inject: false,
+  APP_CONFIG: APP_CONFIG,
+  buildTime: new Date() 
+}
 
 module.exports = {
   devtool: 'source-map',
@@ -34,12 +39,14 @@ module.exports = {
       __DEVELOPMENT__: false,
       APP_CONFIG: JSON.stringify(APP_CONFIG)
     }),
-    new HtmlWebpackPlugin({
+    new HtmlWebpackPlugin(Object.assign({}, HTML_CONFIG, {
       template: 'index.ejs',
-      inject: false,
-      APP_CONFIG: APP_CONFIG,
-      buildTime: new Date()
-    }),
+      filename: 'index.html',
+    })),
+    new HtmlWebpackPlugin(Object.assign({}, HTML_CONFIG, {
+      template: 'index.ejs',
+      filename: '404.html',
+    })),
     new ExtractTextPlugin({
       filename: 'bundle.css'
     }),
@@ -52,9 +59,8 @@ module.exports = {
         warnings: false,
       },
     }),
-    // new CopyWebpackPlugin([
-    //   { from: 'CNAME', to: 'CNAME', toType: 'file' },
-    //   { from: 'docs/index.html', to: '404.html' },
-    // ])
+    new CopyWebpackPlugin([
+      { from: 'CNAME', to: 'CNAME', toType: 'file' }
+    ])
   ],
 };
