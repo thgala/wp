@@ -2,6 +2,7 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const YAML = require('yamljs');
 const APP_CONFIG = YAML.load(__dirname + '/../config.yml').production;
@@ -57,6 +58,9 @@ module.exports = {
       compress: {
         warnings: false,
       },
-    })
+    }),
+    new CopyWebpackPlugin([
+      { from: 'CNAME', to: 'CNAME', toType: 'file' }
+    ])
   ],
 };
