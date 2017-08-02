@@ -1,0 +1,34 @@
+/* Typography */
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  color: #222;
+}
+
+input, select{
+  font-family: 'Open Sans', sans-serif;
+
+  &:focus{
+    outline: none;
+  }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 400;
+}
+
+p {
+  font-size: 16px;
+}
+
+div{
+  font-size: 16px;
+  line-height: 1.35;
+  color: #fff;
+}

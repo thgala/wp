@@ -1,0 +1,13 @@
+.layoutAppear{
+  &-appear {
+    transition: all 0.4s ease;
+
+    opacity: 0;
+    transform: translate3d(0, 20px, 0);
+  }
+
+  &-appear-active {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
