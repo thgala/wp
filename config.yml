@@ -16,7 +16,7 @@ staging:
   protocol: "https"
 
   apiUrl: "http://staging.app.com/api/v1"
-  assetOrigin: "https://app-staging.firebaseapp.com"
+  assetOrigin: "http://wavepuzzle.com"
 
 production:
   <<: *default
@@ -25,4 +25,4 @@ production:
   protocol: "https"
 
   apiUrl: "http://app.com/api/v1"
-  assetOrigin: "https://app-production.firebaseapp.com"
+  assetOrigin: "http://wavepuzzle.com"
