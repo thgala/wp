@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-19233 15241 75 79">
+  <defs>
+    <style>
+      .cls-1 {
+        clip-path: url(#clip-info_1);
+      }
+
+      .cls-2 {
+        stroke: #000;
+        stroke-width: 1px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        font-size: 19px;
+        font-family: Lato-Regular, Lato;
+      }
+    </style>
+    <clipPath id="clip-info_1">
+      <rect x="-19233" y="15241" width="75" height="79"/>
+    </clipPath>
+  </defs>
+  <g id="info_1" data-name="info – 1" class="cls-1">
+    <rect class="cls-4" x="-19233" y="15241" width="75" height="79"/>
+    <g id="Group_3962" data-name="Group 3962" transform="translate(-19536 15241)">
+      <g id="Group_3961" data-name="Group 3961">
+        <path id="Path_3179" data-name="Path 3179" class="cls-2" d="M14.6.5a14.232,14.232,0,0,1,9.973,4.131A13.89,13.89,0,0,1,28.707,14.6,14.1,14.1,0,1,1,14.6.5Z" transform="translate(326 25)"/>
+        <text id="i" class="cls-3" transform="translate(338 47)"><tspan x="0" y="0">i</tspan></text>
+      </g>
+    </g>
+  </g>
+</svg>
