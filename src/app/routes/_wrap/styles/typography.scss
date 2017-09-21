@@ -1,13 +1,13 @@
 /* Typography */
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Muli', sans-serif;
   font-weight: 400;
-  color: #222;
+  color: #fff;
 }
 
 input, select{
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Muli', sans-serif;
 
   &:focus{
     outline: none;
@@ -30,5 +30,5 @@ p {
 div{
   font-size: 16px;
   line-height: 1.35;
-  color: #fff;
+  color: inherit;
 }

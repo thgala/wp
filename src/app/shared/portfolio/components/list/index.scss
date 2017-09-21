@@ -1,9 +1,92 @@
+@import '~app/utils/mixins/screens';
+
 .portoflioList{
   &__wrap{
     display: flex;
     flex-wrap: wrap;
     width: 100%;
     position: relative;
-    background: #000;
+
+    > div{
+      padding: 30px;
+      animation-name: customBounce;
+      animation-duration: 6s;
+      animation-iteration-count: infinite;
+      animation-timing-function: ease;
+      animation-delay: 0;
+
+      &:nth-child(2n){
+        animation-duration: 18s;
+      },
+
+      &:nth-child(3n){
+        animation-duration: 22s;
+      },
+
+      &:nth-child(4n){
+        animation-duration: 14s;
+      },
+
+      &:nth-child(5n){
+        animation-duration: 33s;
+      },
+
+      &:nth-child(6n){
+        animation-duration: 25s;
+      }
+    }
+  }
+
+  @keyframes customBounce {
+    0%, 50%, 100% {
+      transform: translateY(0);
+    }
+    30%, 80% {
+      transform: translateY(-10px)
+    }
+  } 
+}
+
+@media (#{$largeDesktop}) {
+  .portoflioList {
+    &__wrap > div {
+      width: 33.33%;
+      height: 450px;
+    }
+  }
+}
+
+@media (#{$desktop}) and (#{$largeDesktopMax}) {
+  .portoflioList {
+    &__wrap > div {
+      width: 50%;
+    }
+  }
+}
+
+@media (#{$tablet}) and (#{$desktopMax}) {
+  .portoflioList {
+    &__wrap > div {
+      width: 50%;
+      height: 400px;
+    }
+  }
+}
+
+@media (#{$phoneScreen}) and (#{$tabletMax}) {
+  .portoflioList {
+    &__wrap > div {
+      width: 50%;
+      height: 350px;
+    }
+  }
+}
+
+@media (#{$phone}) and (#{$phoneScreenMax}) {
+  .portoflioList {
+    &__wrap > div {
+      width: 100%;
+      height: 400px;
+    }
   }
 }

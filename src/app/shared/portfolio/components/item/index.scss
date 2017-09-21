@@ -1,8 +1,20 @@
-@import '~app/utils/mixins/screens';
-
 .portoflioItem{
   position: relative;
-  overflow: hidden;
+
+  &__globalWrap{
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__imageLoader{
+    > div{
+      width: 100%;
+      height: 100%;
+      border: 1px solid #fff;
+      opacity: 0.25;
+      border-radius: 3px;
+    }
+  }
 
   &__bg{
     position: absolute;
@@ -13,6 +25,7 @@
     background-size: cover;
     background-position: 50% 50%;
     background-repeat: no-repeat;
+    filter: grayscale(100%);
 
     transition: all 2.25s cubic-bezier(0, 0.78, 0.74, 1.08);
   }
@@ -29,29 +42,24 @@
   }
 
   &__content{
-    background: linear-gradient(180deg,
-      rgba(#000, 0.75),
-      rgba(#000, 0.75),
-      rgba(#000, 0.75),
-      rgba(#000, 0.75),
-      rgba(#000, 0.75),
-      rgba(#000, 0.6),
-      rgba(#000, 0.3),
-      rgba(#000, 0.0)
-    );
+    text-align: center;
     padding: 30px 30px 60px 30px;
     position: relative;
     z-index: 5;
+    box-decoration-break: clone;
+    // display: none;
   }
 
   &__title{
-    font-size: 18px;
-    margin-bottom: 5px;
+    font-size: 23px;
+    margin-bottom: 15px;
     font-weight: 600;
+    box-decoration-break: clone;
   }
 
   &__caption{
-    font-size: 14px;
+    font-size: 18px;
+    display: none;
   }
 
   &__player{
@@ -59,12 +67,6 @@
     position: absolute;
     bottom: 0;
     left: 0;
-    // background: rgba(#000, 0.75);
-    background: linear-gradient(180deg,
-      rgba(#000, 0.0),
-      rgba(#000, 0.5),
-      rgba(#000, 0.75)
-    );
 
     opacity: 0.1;
     transition: all 0.35s cubic-bezier(0.07, 0.71, 0.35, 0.92);
@@ -78,39 +80,4 @@
     height: 100%;
   }
 
-}
-
-@media (#{$largeDesktop}) {
-  .portoflioItem{
-    width: 20%;
-    height: 450px;
-  }
-}
-
-@media (#{$desktop}) and (#{$largeDesktopMax}) {
-  .portoflioItem{
-    width: 25%;
-    height: 380px;
-  }
-}
-
-@media (#{$tablet}) and (#{$desktopMax}) {
-  .portoflioItem{
-    width: 33.33%;
-    height: 350px;
-  }
-}
-
-@media (#{$phoneScreen}) and (#{$tabletMax}) {
-  .portoflioItem{
-    width: 50%;
-    height: 350px;
-  }
-}
-
-@media (#{$phone}) and (#{$phoneScreenMax}) {
-  .portoflioItem{
-    width: 100%;
-    height: 400px;
-  }
 }

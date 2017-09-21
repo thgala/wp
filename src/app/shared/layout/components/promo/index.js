@@ -21,20 +21,18 @@ const FullScreenWrap = props => (
 export default class Layout_Promo extends Component {
   render() {
     return (
-      <FullScreen>
-        <FullScreenWrap className={this.block()}>
-          <div className={this.element('bg')} />
-          <div className={this.element('content')}>
-            <div className={this.element('logo')} />
-            <div className={this.element('description')}>
-              Wavepuzzle is a sound design studio
-              offering original and custom music,
-              sound packs, sound effects for advertising,
-              applications, games, films and other.
-            </div>
+      <div className={this.block()}>
+        <div className={this.element('bg')} />
+        <div className={this.element('content')}>
+          <div className={this.element('logo')} />
+          <div className={this.element('description')}>
+            Wavepuzzle is a sound design studio
+            offering original and custom music,
+            sound packs, sound effects for advertising,
+            applications, games, films and other.
           </div>
-        </FullScreenWrap>
-      </FullScreen>
+        </div>
+      </div>
     );
   }
 }

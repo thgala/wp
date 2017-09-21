@@ -62,6 +62,8 @@
     "react-bem-classes": "^1.0.3",
     "react-dom": "^15.3.2",
     "react-fullscreen": "^0.1.0",
+    "react-imageloader": "^2.1.0",
+    "react-lazyload": "^2.2.7",
     "react-redux": "^4.4.5",
     "react-responsive": "^1.2.5",
     "react-router-dom": "^4.0.0",

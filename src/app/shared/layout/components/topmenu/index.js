@@ -13,14 +13,16 @@ export default class Layout_Topmenu extends Component {
 
     const
       { showFixed } = this.props,
-      topmenuRender = props => (
+      topmenuRender = (props = {}) => (
         <div className={this.block(props)}>
           <div className={this.element('list')}>
-            <Link
-              to={`/`}
-              className={this.element('link')}>
-              <div>Home</div>
-            </Link>
+            {props.fixed && (
+              <Link
+                to={`/`}
+                className={this.element('link')}>
+                <div>Home</div>
+              </Link>
+            )}
             <Link
               to={`/portfolio`}
               className={this.element('link')}>

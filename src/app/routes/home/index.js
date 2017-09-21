@@ -39,9 +39,6 @@ export default class RouteHome extends Component {
           showFixed={layoutTopmenu.showFixed}
         />
         <Layout_Component_Promo />
-        <Portfolio_Component_Filter
-          data={portoflioFilter.data}
-        />
         <Layout_Component_TopmenuWaypoint
           fixedMenuTrigger={layoutActions.fixedMenuTrigger}
         />
@@ -55,3 +52,6 @@ export default class RouteHome extends Component {
     );
   }
 }
+        // <Portfolio_Component_Filter
+        //   data={portoflioFilter.data}
+        // />
