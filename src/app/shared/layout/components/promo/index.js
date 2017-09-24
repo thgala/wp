@@ -4,6 +4,8 @@ import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import bem from 'react-bem-classes';
 import FullScreen from 'react-fullscreen';
+import Appear from 'app/shared/layout/components/appear';
+import Container from 'app/shared/layout/components/container';
 
 const FullScreenWrap = props => (
   <div style={{
@@ -21,18 +23,20 @@ const FullScreenWrap = props => (
 export default class Layout_Promo extends Component {
   render() {
     return (
-      <div className={this.block()}>
-        <div className={this.element('bg')} />
-        <div className={this.element('content')}>
-          <div className={this.element('logo')} />
-          <div className={this.element('description')}>
-            Wavepuzzle is a sound design studio
-            offering original and custom music,
-            sound packs, sound effects for advertising,
-            applications, games, films and other.
-          </div>
+      <Appear>
+        <div className={this.block()}>
+          <Container>
+            <div className={this.element('content')}>
+              <div className={this.element('description')}>
+                <span>Wavepuzzle</span> is a <span>sound design studio </span>
+                offering original and custom music,
+                sound packs, sound effects for advertising,
+                applications, games, films and other.
+              </div>
+            </div>
+          </Container>
         </div>
-      </div>
+      </Appear>
     );
   }
 }

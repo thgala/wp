@@ -1,3 +1,4 @@
+import Container from 'app/shared/layout/components/container';
 import Portfolio_Component_Item from './../item';
 
 import './index.scss';
@@ -17,14 +18,16 @@ export default class Portfolio_List extends Component {
       
     return (
       <div className={this.block()}>
-        <div className={this.element('wrap')}>
-          {data.map((item, index) =>
-            <Portfolio_Component_Item
-              key={index}
-              item={item}
-            />
-          )}
-        </div>
+        <Container>
+          <div className={this.element('wrap')}>
+            {data.map((item, index) =>
+              <Portfolio_Component_Item
+                key={index}
+                item={item}
+              />
+            )}
+          </div>
+        </Container>
       </div>
     );
   }

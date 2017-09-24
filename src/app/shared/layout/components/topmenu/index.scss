@@ -1,9 +1,24 @@
+@import '~app/utils/mixins/screens';
+
 .layoutTopmenu{
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
   z-index: 50;
+  padding: 15px 0;
+  overflow: hidden;
+
+  &__wrap{
+    display: flex;
+  }
+
+  &__logo{
+    width: 50px;
+    height: 50px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    margin-right: 15px;
+    background-image: url(./images/logo--white.svg);
+  }
 
   &__list{
     display: flex;
@@ -17,7 +32,6 @@
     div{
       position: relative;
       z-index: 5;
-      transition: all 0.1s ease;
       font-weight: 700;
       letter-spacing: 0.5px;
       text-decoration: underline;
@@ -25,18 +39,19 @@
 
     &:hover{
       div{
-        letter-spacing: 2px;
+        color: #ffd700;
       }
     }
 
   }
 
   &--fixed{
-    background: #000;
+    background: rgba(#000, 0.75);
     position: fixed;
     z-index: 100;
     top: 0;
     left: 0;
+    border-bottom: none;
 
     opacity: 0;
     visibility: hidden;
@@ -48,6 +63,22 @@
       opacity: 1;
       visibility: visible;
       transform: translate3d(0, 0, 0);
+    }
+  }
+}
+
+@media (#{$phone}) and (#{$desktopMax}) {
+  .layoutTopmenu{
+    &__logo{
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      opacity: 0.25;
+      top: -15px;
+    }
+
+    &--fixed{
+      display: none;
     }
   }
 }

@@ -9,6 +9,7 @@ import Contacts_Component_Promo from 'app/shared/contacts/components/promo';
 
 import Portfolio from 'app/modules/portfolio';
 import Layout from 'app/modules/layout';
+import Appear from 'app/shared/layout/components/appear';
 
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
@@ -34,7 +35,7 @@ export default class RouteHome extends Component {
       { portoflioFilter, portoflioList, layoutTopmenu } = this.props;
 
     return (
-      <section>
+      <Appear>
         <Layout_Component_Topmenu
           showFixed={layoutTopmenu.showFixed}
         />
@@ -48,7 +49,7 @@ export default class RouteHome extends Component {
         <Studio_Component_Promo />
         <Studio_Component_PhotoList />
         <Contacts_Component_Promo />
-      </section>
+      </Appear>
     );
   }
 }

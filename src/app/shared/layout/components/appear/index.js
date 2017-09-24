@@ -1,7 +1,6 @@
 import './index.scss';
 
 import React, { Component } from 'react';
-import { Link } from 'react-router';
 import bem from 'react-bem-classes';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
@@ -16,7 +15,7 @@ export default class LayoutAppear extends Component {
       <ReactCSSTransitionGroup
         transitionName={this.block()}
         transitionAppear={true}
-        transitionAppearTimeout={100}
+        transitionAppearTimeout={0}
 
         transitionEnter={false}
         transitionLeave={false}

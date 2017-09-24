@@ -4,16 +4,16 @@
   &__wrap{
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    width: auto;
     position: relative;
 
     > div{
-      padding: 30px;
-      animation-name: customBounce;
-      animation-duration: 6s;
-      animation-iteration-count: infinite;
-      animation-timing-function: ease;
-      animation-delay: 0;
+      // padding: 30px;
+      // animation-name: customBounce;
+      // animation-duration: 6s;
+      // animation-iteration-count: infinite;
+      // animation-timing-function: ease;
+      // animation-delay: 0;
 
       &:nth-child(2n){
         animation-duration: 18s;
@@ -47,6 +47,7 @@
   } 
 }
 
+
 @media (#{$largeDesktop}) {
   .portoflioList {
     &__wrap > div {
@@ -59,7 +60,8 @@
 @media (#{$desktop}) and (#{$largeDesktopMax}) {
   .portoflioList {
     &__wrap > div {
-      width: 50%;
+      width: 33.33%;
+      height: 350px;
     }
   }
 }
@@ -77,16 +79,20 @@
   .portoflioList {
     &__wrap > div {
       width: 50%;
-      height: 350px;
+      height: 300px;
     }
   }
 }
 
 @media (#{$phone}) and (#{$phoneScreenMax}) {
   .portoflioList {
-    &__wrap > div {
-      width: 100%;
-      height: 400px;
+    &__wrap {
+      margin-left: -15px;
+      margin-right: -15px;
+      > div {
+        width: 100%;
+        height: 400px;
+      }
     }
   }
 }

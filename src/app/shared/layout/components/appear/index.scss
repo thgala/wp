@@ -1,9 +1,9 @@
 .layoutAppear{
   &-appear {
-    transition: all 0.4s ease;
+    transition: all 1.5s ease;
 
     opacity: 0;
-    transform: translate3d(0, 20px, 0);
+    transform: translate3d(0, 30px, 0);
   }
 
   &-appear-active {

@@ -27,13 +27,17 @@ export default class ItemEffect extends Component {
   render() {
     return (
       <div {...this.props}>
-        <div style={{
-          transform: `translateY(${this.state.offset})`,
-          opacity: this.state.opacity,
-          transition: 'all 0.5s ease'
-        }}>
-          {this.props.children}
-        </div>
+        {this.state.opacity !== 0 && (
+          <div style={{
+            transform: `translateY(${this.state.offset})`,
+            opacity: this.state.opacity,
+            transition: 'all 0.5s ease'
+          }}>
+            <Appear>
+              {this.props.children}
+            </Appear>
+          </div>
+        )}
       </div>
     )
   }
