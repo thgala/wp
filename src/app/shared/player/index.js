@@ -66,10 +66,10 @@ export default class Player extends Component {
   render() {
     const
       { isPlaying, showPlayer, loading, } = this.state,
-      { options, videoId, bgUrl, } = this.props;
+      { options, videoId, bgUrl, coloredBg, } = this.props;
 
     return !videoId ? null : (
-      <div className={this.block({ isPlaying, loading, })}>
+      <div className={this.block({ isPlaying, loading, coloredBg, })}>
         <div className={this.element('content')}>
           <div
             className={this.element('bg')}
