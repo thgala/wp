@@ -1,0 +1,13 @@
+@import '~app/utils/mixins/screens';
+
+.layoutTitle {
+  margin: 60px auto;
+  text-align: center;
+}
+
+@media (#{$phone}) and (#{$desktopMax}) {
+  .layoutTitle {
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+}

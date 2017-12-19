@@ -1,41 +1,32 @@
 @import '~app/utils/mixins/screens';
 
-.layoutPromo{
+.layoutPromo {
   position: relative;
-  margin: 30px 0 30px 0;
+  background: #161616;
 
-  &__content{
-    z-index: 5;
-    position: relative;
+  &__wrap {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    color: #000;
   }
 
-  &__description{
-    font-size: 42px;
-    font-weight: 700;
-    color: #fff;
+  &__logo {
+    width: 290px;
+    height: 50px;
+    margin: auto;
 
-    > span{
-
-      &:nth-child(1){
-        background: #ffd700;
-        color: #111;
-        padding: 0 5px;
-      }
-
-    }
+    background-image: url(./images/logo--mini.svg);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
   }
 
-}
-
-@media (#{$phone}) and (#{$desktopMax}) {
-  .layoutPromo{
-    &__description{
-      font-size: 23px;
-    }
+  &__note {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    font-style: italic;
   }
+
 }

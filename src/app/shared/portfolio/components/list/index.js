@@ -12,15 +12,20 @@ import bem from 'react-bem-classes';
   block: 'portoflioList'
 })
 export default class Portfolio_List extends Component {
+
+  static defaultProps = {
+    list: [],
+  }
+
   render() {
     const
-      { data } = this.props;
+      { list } = this.props;
       
-    return (
+    return list.length === 0 ? null : (
       <div className={this.block()}>
         <Container>
           <div className={this.element('wrap')}>
-            {data.map((item, index) =>
+            {list.map((item, index) =>
               <Portfolio_Component_Item
                 key={index}
                 item={item}
@@ -29,6 +34,6 @@ export default class Portfolio_List extends Component {
           </div>
         </Container>
       </div>
-    );
+    )
   }
 }

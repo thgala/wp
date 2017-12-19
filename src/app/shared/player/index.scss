@@ -1,114 +1,84 @@
-@import url('https://cdn.plyr.io/2.0.12/plyr.css');
-
 .mediaPlayer{
-  opacity: 0;
-  visibility: hidden;
-  transition: all 1s ease;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 
-  &--isReady{
+  &__bg {
+    width: 101%;
+    height: 101%;
+    cursor: pointer;
+    filter: grayscale(100%);
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.3s ease;
+
+    background-position: 50% 50%;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &:hover &__bg {
+    filter: grayscale(0%);
+  }
+
+  &__play {
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 2;
+    cursor: pointer;
+
+    margin-top: -25px;
+    margin-left: -25px;
+
+    transition: all 0.3s ease;
+
+    background-image: url(./images/play.svg);
+    background-position: 50% 50%;
+    background-size: auto 50%;
+    background-repeat: no-repeat;
+  }
+
+  &--loading &__play {
+    animation: loading 1s infinite ease;
+  }
+
+  &__content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
     opacity: 1;
     visibility: visible;
-  }
-}
-
-.plyr{
-  height: 100%;
-
-  &--audio &__controls{
-    background: transparent;
-  }
-  &--audio &__controls, &--video &__controls{
-    border-color: transparent;
-    padding-left: 20px;
-    padding-right: 20px;
-    background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.5));
-    border: none;
-
-    button{
-      &:hover{
-        background: rgba(255, 255, 255, 0.25);
-      }
-      svg{
-        fill: #fff;
-      }
-    }
+    transition: all 0.3s ease;
   }
 
-  &__time{
-    color: #fff;
-    &--current{
-      color: #fff;
-    }
-  }
-
-  &__sr-only{
-    color: #fff;
-  }
-
-  &__volume{
-    &--display{
-      color: rgba(255, 255, 255, 0.75);
-    }
-  }
-
-  &__progress{
-    &--played{
-      color: rgba(255, 255, 255, 0.75);
-    }
-  }
-
-  &__video-wrapper{
-    background: transparent;
-
-    cursor: pointer;
-    width: 2000px;
-    margin-left: -1000px;
-    position: absolute;
-    left: 50%;
-
+  &--isPlaying &__content {
     opacity: 0;
-    transition: all 0.5s cubic-bezier(0.07, 0.71, 0.35, 0.92);
+    visibility: hidden;
   }
 
-  video{
+  &__wrap {
+    width: 100%;
     height: 100%;
   }
-
-  &--setup{
-    opacity: 1;
-    transition: all 0.5s cubic-bezier(0.07, 0.71, 0.35, 0.92);
-  }
-
-  &__play-large{
-    background: transparent;
-    border: 1px solid transparent;
-    padding: 30px;
-    z-index: 50;
-    cursor: pointer;
-    outline: none;
-    border: none;
-    box-shadow: none;
-  }
-
-  &--fullscreen-active &__video-wrapper{
-    width: 100%;
-    margin: 0;
-    position: relative;
-    left: 0;
-    opacity: 1;
-  }
 }
 
-.mediaPlayer{
-  &--isPlaying{
-    .plyr{
-      &--setup{
-        opacity: 1;
-      }
-
-      &__video-wrapper{
-        opacity: 1;
-      }
-    }
+@keyframes loading {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
   }
 }

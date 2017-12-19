@@ -1,14 +1,16 @@
 /* global styles */
+@import '~app/utils/mixins/screens';
+
 @import './fonts/index';
 @import './typography';
 @import './links';
 
-*, *:after, *:before{
+*, *:after, *:before {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
 }
 
-#app{
+#app {
   overflow: hidden;
 }
 
@@ -16,19 +18,44 @@ button::-moz-focus-inner {
   border: 0;
 }
 
-body{
+body {
   position: relative;
-  background: #111; // 111
+  background: #222; // 111
 
   h1 {
-
+    font-size: 36px;
+    line-height: 1.35;
   }
 
   h2 {
-    
+    font-size: 24px;
+    line-height: 1.35;
+    font-weight: 700;
+  }
+
+  p {
+    font-size: 24px;
+    line-height: 1.5;
+    color: #fff;
   }
 
   img {
     width: 100%;
+  }
+}
+
+@media (#{$phone}) and (#{$desktopMax}) {
+  body {
+    h1 {
+      font-size: 24px;
+    }
+      
+    h2 {
+      font-size: 18px;
+    }
+
+    p {
+      font-size: 18px;
+    }
   }
 }
